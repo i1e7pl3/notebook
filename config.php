@@ -2,12 +2,11 @@
 $db_file = 'contacts.db';
 
 try {
-    $pdo = new PDO('sqlite:' . $db_file);
+    $pdo = new PDO('mysql:host=localhost;dbname=mospol_olga', 'mospol_olga', 'OY5oXok4!o}D9P(m');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Создание таблицы, если она не существует
     $pdo->exec("CREATE TABLE IF NOT EXISTS contacts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id INTEGER PRIMARY KEY AUTO_INCREMENT,
         surname TEXT NOT NULL,
         name TEXT NOT NULL,
         patronymic TEXT,
